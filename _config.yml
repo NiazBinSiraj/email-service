@@ -1,0 +1,34 @@
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+title: "Email Service API"
+description: "Production-ready Express.js REST API for sending emails via Gmail SMTP"
+url: "https://niazbinsiraj.github.io"
+baseurl: "/email-service"
+
+author:
+  name: "Niaz Bin Siraj"
+  email: "niaz9767@gmail.com"
+
+social:
+  name: Niaz Bin Siraj
+  links:
+    - https://github.com/NiazBinSiraj
+
+github:
+  repository_url: "https://github.com/NiazBinSiraj/email-service"
+
+# SEO settings
+lang: en_US
+timezone: UTC
+
+# GitHub Pages settings
+include:
+  - 404.html
+  - robots.txt
+  - sitemap.xml
+
+# Exclude from processing
+exclude:
+  - README.md

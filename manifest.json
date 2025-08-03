@@ -1,0 +1,19 @@
+{
+  "name": "Email Service API Documentation",
+  "short_name": "Email API Docs",
+  "description": "Production-ready Express.js REST API for sending emails via Gmail SMTP",
+  "start_url": "/email-service/",
+  "scope": "/email-service/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📧</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["developer", "documentation", "productivity"],
+  "lang": "en"
+}

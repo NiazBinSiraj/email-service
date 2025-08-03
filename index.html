@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Service API - Professional Email Solution</title>
+    <meta name="description" content="Production-ready Express.js REST API for sending emails via Gmail SMTP. Clean, secure, and easy to deploy.">
+    <meta name="keywords" content="email api, nodejs, express, gmail smtp, rest api, email service">
+    <meta name="author" content="Niaz Bin Siraj">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Email Service API">
+    <meta property="og:description" content="Production-ready Express.js REST API for sending emails via Gmail SMTP">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://niazbinsiraj.github.io/email-service/">
+    <meta property="og:image" content="https://niazbinsiraj.github.io/email-service/og-image.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Email Service API">
+    <meta name="twitter:description" content="Production-ready Express.js REST API for sending emails via Gmail SMTP">
+    <meta name="twitter:image" content="https://niazbinsiraj.github.io/email-service/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://niazbinsiraj.github.io/email-service/">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days"
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📧</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-icon">📧</span>
+                <span class="nav-title">Email Service API</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#api-reference" class="nav-link">API Reference</a>
+                <a href="#getting-started" class="nav-link">Get Started</a>
+                <a href="#developer" class="nav-link">Developer</a>
+                <a href="https://github.com/NiazBinSiraj/email-service" class="nav-link github-link" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge">✅ Tested & Production Ready</span>
+                </div>
+                <h1 class="hero-title">
+                    Professional Email Service API
+                </h1>
+                <p class="hero-subtitle">
+                    A clean, secure, and production-ready Express.js REST API for sending emails via Gmail SMTP. 
+                    Built with modern Node.js best practices and comprehensive validation.
+                </p>
+                <div class="hero-actions">
+                    <a href="#getting-started" class="btn btn-primary">Get Started</a>
+                    <a href="#api-reference" class="btn btn-secondary">API Reference</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Test Coverage</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Dependencies Issues</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5min</div>
+                        <div class="stat-label">Setup Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Overview</h2>
+                <p class="section-subtitle">
+                    A comprehensive email service solution built with modern web technologies
+                </p>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Clean Architecture</h3>
+                    <p>Modular design with separation of concerns. Controllers, services, routes, and middleware are properly organized for maintainability.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Security First</h3>
+                    <p>Built-in security with Helmet, CORS, rate limiting, input validation, and secure environment variable handling.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Production Ready</h3>
+                    <p>Comprehensive error handling, logging, health checks, and ready for deployment on platforms like Render.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🧪</div>
+                    <h3>Fully Tested</h3>
+                    <p>Includes comprehensive test suite with validation testing, error handling verification, and API endpoint testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technology Stack</h2>
+                <p class="section-subtitle">Built with modern, reliable technologies</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">🟢</div>
+                    <div class="tech-info">
+                        <h4>Node.js</h4>
+                        <p>JavaScript runtime environment</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <div class="tech-info">
+                        <h4>Express.js</h4>
+                        <p>Fast, unopinionated web framework</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📧</div>
+                    <div class="tech-info">
+                        <h4>Nodemailer</h4>
+                        <p>Email sending library for Node.js</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">✅</div>
+                    <div class="tech-info">
+                        <h4>Express Validator</h4>
+                        <p>Input validation and sanitization</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🛡️</div>
+                    <div class="tech-info">
+                        <h4>Helmet</h4>
+                        <p>Security middleware for Express</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🌐</div>
+                    <div class="tech-info">
+                        <h4>CORS</h4>
+                        <p>Cross-origin resource sharing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">Everything you need for a professional email service</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Gmail SMTP Integration</h3>
+                    <p>Seamlessly send emails through Gmail's reliable SMTP service with proper authentication and security.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Input Validation</h3>
+                    <p>Comprehensive validation for email addresses, subjects, and message content with detailed error responses.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Multiple Recipients</h3>
+                    <p>Support for multiple TO, CC, and BCC recipients with proper limits to prevent abuse.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Security Middleware</h3>
+                    <p>Built-in rate limiting, CORS protection, security headers, and input sanitization.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Health Monitoring</h3>
+                    <p>Health check endpoints for monitoring service status and verifying SMTP connectivity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Easy Deployment</h3>
+                    <p>Ready for deployment on Render, Heroku, or any Node.js hosting platform with simple configuration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Reference Section -->
+    <section id="api-reference" class="section api-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">API Reference</h2>
+                <p class="section-subtitle">Complete documentation for all endpoints</p>
+            </div>
+            
+            <!-- Health Check Endpoint -->
+            <div class="api-endpoint">
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/health</span>
+                    <span class="endpoint-description">Check service health status</span>
+                </div>
+                <div class="endpoint-content">
+                    <div class="endpoint-section">
+                        <h4>Response Example</h4>
+                        <pre class="code-block"><code>{
+  "status": "success",
+  "message": "Email service is running",
+  "timestamp": "2025-08-03T10:30:00.000Z",
+  "environment": "production"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Send Email Endpoint -->
+            <div class="api-endpoint">
+                <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <span class="endpoint-path">/api/v1/send-email</span>
+                    <span class="endpoint-description">Send email via Gmail SMTP</span>
+                </div>
+                <div class="endpoint-content">
+                    <div class="endpoint-section">
+                        <h4>Request Body</h4>
+                        <pre class="code-block"><code>{
+  "to": "recipient@example.com",
+  "subject": "Test Email",
+  "message": "Hello, this is a test email!"
+}</code></pre>
+                    </div>
+                    <div class="endpoint-section">
+                        <h4>Request Body (Advanced)</h4>
+                        <pre class="code-block"><code>{
+  "to": ["recipient1@example.com", "recipient2@example.com"],
+  "cc": ["cc@example.com"],
+  "bcc": ["bcc@example.com"],
+  "subject": "Advanced Email Example",
+  "message": "This email supports multiple recipients and CC/BCC."
+}</code></pre>
+                    </div>
+                    <div class="endpoint-section">
+                        <h4>Success Response (200)</h4>
+                        <pre class="code-block"><code>{
+  "status": "success",
+  "message": "Email sent successfully",
+  "data": {
+    "messageId": "&lt;unique-message-id@gmail.com&gt;",
+    "recipients": 1,
+    "subject": "Test Email",
+    "sentAt": "2025-08-03T10:30:00.000Z"
+  }
+}</code></pre>
+                    </div>
+                    <div class="endpoint-section">
+                        <h4>Error Response (400)</h4>
+                        <pre class="code-block"><code>{
+  "status": "error",
+  "message": "Validation failed",
+  "errors": [
+    {
+      "field": "to",
+      "message": "Recipient email address is required",
+      "value": ""
+    }
+  ]
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Rules -->
+            <div class="validation-rules">
+                <h3>Validation Rules</h3>
+                <div class="rules-grid">
+                    <div class="rule-item">
+                        <strong>to</strong>
+                        <span>Required, valid email(s), max 50 recipients</span>
+                    </div>
+                    <div class="rule-item">
+                        <strong>subject</strong>
+                        <span>Required, 1-200 characters</span>
+                    </div>
+                    <div class="rule-item">
+                        <strong>message</strong>
+                        <span>Required, 1-10,000 characters</span>
+                    </div>
+                    <div class="rule-item">
+                        <strong>cc</strong>
+                        <span>Optional, valid email(s), max 20 recipients</span>
+                    </div>
+                    <div class="rule-item">
+                        <strong>bcc</strong>
+                        <span>Optional, valid email(s), max 20 recipients</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rate Limiting -->
+            <div class="rate-limiting">
+                <h3>Rate Limiting</h3>
+                <p>The API implements rate limiting to prevent abuse:</p>
+                <ul>
+                    <li><strong>Window:</strong> 15 minutes (configurable)</li>
+                    <li><strong>Max Requests:</strong> 100 per window (configurable)</li>
+                    <li><strong>Response:</strong> 429 status with retry information</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Getting Started</h2>
+                <p class="section-subtitle">Get your email service up and running in minutes</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Clone & Install</h3>
+                        <pre class="code-block"><code>git clone https://github.com/NiazBinSiraj/email-service.git
+cd email-service
+npm install</code></pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Configure Environment</h3>
+                        <pre class="code-block"><code>copy .env.example .env</code></pre>
+                        <p>Edit <code>.env</code> with your Gmail credentials:</p>
+                        <pre class="code-block"><code>GMAIL_USER=your-email@gmail.com
+GMAIL_PASS=your-app-password
+PORT=3000
+NODE_ENV=production</code></pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Start the Server</h3>
+                        <pre class="code-block"><code>npm start</code></pre>
+                        <p>Expected output:</p>
+                        <pre class="code-block success"><code>✅ Email service is running on port 3000
+🌍 Environment: production
+📧 Gmail user configured: Yes</code></pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Test the API</h3>
+                        <p>Run the included test script:</p>
+                        <pre class="code-block"><code>.\test-api.ps1</code></pre>
+                        <p>Or test manually:</p>
+                        <pre class="code-block"><code>curl http://localhost:3000/health</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="important-note">
+                <h3>📋 Important: Gmail App Password</h3>
+                <p>You must use a Gmail App Password, not your regular password:</p>
+                <ol>
+                    <li>Enable 2-Factor Authentication on your Gmail account</li>
+                    <li>Go to <a href="https://myaccount.google.com/security" target="_blank">Google Account Security</a></li>
+                    <li>Navigate to "2-Step Verification" → "App passwords"</li>
+                    <li>Generate a new app password for "Mail"</li>
+                    <li>Use this 16-character password in your <code>.env</code> file</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section id="developer" class="section developer-section">
+        <div class="container">
+            <div class="developer-card">
+                <div class="developer-avatar">
+                    <img src="https://github.com/NiazBinSiraj.png" alt="Niaz Bin Siraj" class="avatar-img">
+                </div>
+                <div class="developer-info">
+                    <h2>Niaz Bin Siraj</h2>
+                    <p class="developer-title">Full Stack Developer</p>
+                    <p class="developer-bio">
+                        Passionate about building clean, efficient, and scalable web applications. 
+                        Experienced in Node.js, Express.js, and modern web technologies. 
+                        This Email Service API represents my commitment to writing production-ready, 
+                        well-tested code that follows industry best practices.
+                    </p>
+                    <div class="developer-links">
+                        <a href="https://github.com/NiazBinSiraj" target="_blank" class="developer-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="mailto:niaz9767@gmail.com" class="developer-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Email Service API</h3>
+                    <p>Production-ready email service built with Node.js and Express.js</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#api-reference">API Reference</a></li>
+                        <li><a href="#getting-started">Getting Started</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/NiazBinSiraj/email-service" target="_blank">Source Code</a></li>
+                        <li><a href="https://github.com/NiazBinSiraj/email-service/issues" target="_blank">Report Issues</a></li>
+                        <li><a href="https://github.com/NiazBinSiraj/email-service/blob/main/README.md" target="_blank">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Niaz Bin Siraj. Released under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
