@@ -21,7 +21,7 @@ const sendEmail = async (req, res) => {
       });
     }
 
-    const { to, subject, message, cc, bcc } = req.body;
+    const { to, subject, message, cc, bcc, from, name } = req.body;
 
     // Prepare email data
     const emailData = {
@@ -29,7 +29,9 @@ const sendEmail = async (req, res) => {
       subject,
       message,
       ...(cc && { cc: Array.isArray(cc) ? cc : [cc] }),
-      ...(bcc && { bcc: Array.isArray(bcc) ? bcc : [bcc] })
+      ...(bcc && { bcc: Array.isArray(bcc) ? bcc : [bcc] }),
+      ...(from && { from }),
+      ...(name && { name })
     };
 
     // Send email using email service
@@ -41,6 +43,8 @@ const sendEmail = async (req, res) => {
       message: 'Email sent successfully',
       data: {
         messageId: result.messageId,
+        from: emailData.from || process.env.GMAIL_USER,
+        name: emailData.name || 'Email Service',
         recipients: emailData.to.length,
         subject: emailData.subject,
         sentAt: new Date().toISOString()

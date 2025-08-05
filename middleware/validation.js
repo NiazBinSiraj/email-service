@@ -84,7 +84,22 @@ const validateEmailRequest = [
         }
       }
       return true;
-    })
+    }),
+
+  // Validate optional 'from' field
+  body('from')
+    .optional()
+    .isEmail()
+    .withMessage('From address must be a valid email address')
+    .normalizeEmail(),
+
+  // Validate optional 'name' field
+  body('name')
+    .optional()
+    .isLength({ min: 1, max: 100 })
+    .withMessage('Name must be between 1 and 100 characters')
+    .trim()
+    .escape()
 ];
 
 module.exports = {

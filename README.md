@@ -152,7 +152,9 @@ POST /api/v1/send-email
   "subject": "Test Email",
   "message": "Hello, this is a test email!",
   "cc": ["cc@example.com"],
-  "bcc": ["bcc@example.com"]
+  "bcc": ["bcc@example.com"],
+  "from": "custom.sender@example.com",
+  "name": "Custom Business Name"
 }
 ```
 
@@ -163,6 +165,8 @@ POST /api/v1/send-email
   "message": "Email sent successfully",
   "data": {
     "messageId": "<unique-message-id>",
+    "from": "custom.sender@example.com",
+    "name": "Custom Business Name",
     "recipients": 1,
     "subject": "Test Email",
     "sentAt": "2025-08-03T10:30:00.000Z"
@@ -192,16 +196,22 @@ POST /api/v1/send-email
 - **message**: Required, 1-10,000 characters
 - **cc**: Optional, valid email address(es), max 20 recipients
 - **bcc**: Optional, valid email address(es), max 20 recipients
+- **from**: Optional, valid email address (custom sender address)
+- **name**: Optional, 1-100 characters (custom sender name, defaults to "Email Service")
 
 ## Testing
 
 ### Automated Test Suite
 
-The project includes a comprehensive PowerShell test script that validates all API functionality:
+The project includes a comprehensive PowerShell test script that validates all API functionality. The script automatically reads the test email address from your `.env` file:
 
 ```powershell
 .\test-api.ps1
 ```
+
+**Prerequisites:**
+- Ensure your `.env` file contains `GMAIL_USER=your-email@gmail.com`
+- The script will use this email address for all test scenarios
 
 **Test Coverage:**
 - ✅ Health check endpoint

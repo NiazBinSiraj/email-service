@@ -74,18 +74,24 @@ class EmailService {
    * @param {string} emailData.message - Email message content
    * @param {string|string[]} emailData.cc - CC recipient(s) (optional)
    * @param {string|string[]} emailData.bcc - BCC recipient(s) (optional)
+   * @param {string} emailData.from - Custom sender email address (optional)
+   * @param {string} emailData.name - Custom sender name (optional, defaults to "Email Service")
    * @returns {Promise<Object>} Email sending result
    */
   async sendEmail(emailData) {
     try {
       this.ensureInitialized();
-      const { to, subject, message, cc, bcc } = emailData;
+      const { to, subject, message, cc, bcc, from, name } = emailData;
+
+      // Determine the sender address and name
+      const senderAddress = from || process.env.GMAIL_USER;
+      const senderName = name || 'Email Service';
 
       // Prepare mail options
       const mailOptions = {
         from: {
-          name: 'Email Service',
-          address: process.env.GMAIL_USER
+          name: senderName,
+          address: senderAddress
         },
         to: Array.isArray(to) ? to.join(', ') : to,
         subject: subject,
@@ -100,6 +106,8 @@ class EmailService {
 
       console.log('✅ Email sent successfully:', {
         messageId: result.messageId,
+        from: senderAddress,
+        name: senderName,
         recipients: to,
         subject: subject
       });
