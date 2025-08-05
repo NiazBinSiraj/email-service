@@ -362,6 +362,8 @@ a:hover {
 .tech-stack {
     background: var(--text-primary);
     color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .tech-stack .section-title,
