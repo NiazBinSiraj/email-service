@@ -28,3 +28,5 @@ node_modules/
 
 # Local development server files
 .cache/
+
+.env

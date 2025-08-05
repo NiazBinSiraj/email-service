@@ -216,6 +216,11 @@
                     <p>Support for multiple TO, CC, and BCC recipients with proper limits to prevent abuse.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Custom Sender Details</h3>
+                    <p>Customize sender email address and display name for branded email communications from your business.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">🔐</div>
                     <h3>Security Middleware</h3>
                     <p>Built-in rate limiting, CORS protection, security headers, and input sanitization.</p>
@@ -284,8 +289,10 @@
   "to": ["recipient1@example.com", "recipient2@example.com"],
   "cc": ["cc@example.com"],
   "bcc": ["bcc@example.com"],
+  "from": "custom.sender@example.com",
+  "name": "Custom Business Name",
   "subject": "Advanced Email Example",
-  "message": "This email supports multiple recipients and CC/BCC."
+  "message": "This email supports multiple recipients, CC/BCC, and custom sender details."
 }</code></pre>
                     </div>
                     <div class="endpoint-section">
@@ -295,6 +302,8 @@
   "message": "Email sent successfully",
   "data": {
     "messageId": "&lt;unique-message-id@gmail.com&gt;",
+    "from": "custom.sender@example.com",
+    "name": "Custom Business Name",
     "recipients": 1,
     "subject": "Test Email",
     "sentAt": "2025-08-03T10:30:00.000Z"
@@ -342,6 +351,14 @@
                         <strong>bcc</strong>
                         <span>Optional, valid email(s), max 20 recipients</span>
                     </div>
+                    <div class="rule-item">
+                        <strong>from</strong>
+                        <span>Optional, valid email address (custom sender)</span>
+                    </div>
+                    <div class="rule-item">
+                        <strong>name</strong>
+                        <span>Optional, 1-100 characters (custom sender name)</span>
+                    </div>
                 </div>
             </div>
 
@@ -354,6 +371,58 @@
                     <li><strong>Max Requests:</strong> 100 per window (configurable)</li>
                     <li><strong>Response:</strong> 429 status with retry information</li>
                 </ul>
+            </div>
+
+            <!-- Custom Sender Configuration -->
+            <div class="custom-sender">
+                <h3>Custom Sender Configuration</h3>
+                <p>Customize your email sender details for branded communications:</p>
+                
+                <div class="sender-examples">
+                    <div class="sender-example">
+                        <h4>Default Behavior</h4>
+                        <pre class="code-block"><code>{
+  "to": "customer@example.com",
+  "subject": "Welcome!",
+  "message": "Thank you for signing up!"
+}</code></pre>
+                        <p class="example-result">📧 Sender: <strong>Email Service</strong> &lt;your-gmail@gmail.com&gt;</p>
+                    </div>
+
+                    <div class="sender-example">
+                        <h4>Custom Name Only</h4>
+                        <pre class="code-block"><code>{
+  "to": "customer@example.com",
+  "name": "My Business Support",
+  "subject": "Welcome!",
+  "message": "Thank you for signing up!"
+}</code></pre>
+                        <p class="example-result">📧 Sender: <strong>My Business Support</strong> &lt;your-gmail@gmail.com&gt;</p>
+                    </div>
+
+                    <div class="sender-example">
+                        <h4>Custom From Address</h4>
+                        <pre class="code-block"><code>{
+  "to": "customer@example.com",
+  "from": "support@mybusiness.com",
+  "subject": "Welcome!",
+  "message": "Thank you for signing up!"
+}</code></pre>
+                        <p class="example-result">📧 Sender: <strong>Email Service</strong> &lt;support@mybusiness.com&gt;</p>
+                    </div>
+
+                    <div class="sender-example">
+                        <h4>Full Custom Configuration</h4>
+                        <pre class="code-block"><code>{
+  "to": "customer@example.com",
+  "from": "support@mybusiness.com",
+  "name": "My Business Support",
+  "subject": "Welcome!",
+  "message": "Thank you for signing up!"
+}</code></pre>
+                        <p class="example-result">📧 Sender: <strong>My Business Support</strong> &lt;support@mybusiness.com&gt;</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

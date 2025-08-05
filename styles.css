@@ -497,7 +497,8 @@ a:hover {
 }
 
 .validation-rules,
-.rate-limiting {
+.rate-limiting,
+.custom-sender {
     background: white;
     padding: 2rem;
     border-radius: var(--border-radius-lg);
@@ -539,6 +540,44 @@ a:hover {
 .rate-limiting li {
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
+}
+
+/* Custom Sender Styles */
+.sender-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.sender-example {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.sender-example h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.sender-example .code-block {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.example-result {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0;
 }
 
 /* Getting Started */
